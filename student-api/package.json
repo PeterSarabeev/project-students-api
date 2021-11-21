@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "student-api",
+  "version": "1.0.0",
+  "description": "api",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --experimental-json-modules app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.7"
+  }
+}

@@ -1,0 +1,47 @@
+body {
+  background: rgb(0, 0, 0);
+}
+
+#nav-bar {
+  box-sizing: border-box;
+  position: fixed;
+  color: white;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  background-color: #ff9336;
+  box-shadow: inset 0 -0.125rem 1rem 0.25rem #684323, 0rem -1.75rem 1rem 2rem grey;
+}
+
+.nav-button {
+  box-sizing: content-box;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-size: 1.35rem;
+}
+
+#nav-bar .nav-button {
+  color: black;
+  display: inline-block;
+  font-style: oblique;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#nav-bar .nav-button:hover {
+  color: white;
+}
+
+.separator {
+  border: 0.025rem solid black;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#main-container {
+  padding-top: 5rem;
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
