@@ -1,10 +1,21 @@
-const Button = ({ viewType, isActive, onClick }) => {
+import React from "react"
+
+
+const Button = ({ buttons, onClick, getIndex }) => {
     return (
-        <button type="button" className={
-            isActive ? "btn btn-primary" : "btn btn-outline-primary"
-        } onClick={() => onClick()}>
-            <i className={viewType === "list" ? "fa fa-list" : "fa fa-table"}></i>
-        </button>
+        <>
+            {
+                buttons.map(button =>
+                    <React.Fragment key={buttons.indexOf(button)}>
+                        <button type="button" className={
+                            button.isActive ? "btn btn-primary" : "btn btn-outline-primary"
+                        } onClick={() => onClick()}>
+                            <i className={button.icon}></i>
+                        </button>
+                    </React.Fragment>
+                )
+            }
+        </>
     )
 }
 

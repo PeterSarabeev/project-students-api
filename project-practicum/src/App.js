@@ -3,16 +3,17 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
+
 import Button from './components/Button'
+import { studentsViewButtons } from './utils/studentsViewButtons';
+
 import CheckBox from './components/Checkbox'
 import NavBar from './components/NavBar'
 import ListView from './components/tables/ListView'
 import TableView from './components/tables/TableView'
 
 function App() {
-  const [isListActive, setIsListActive] = useState(true)
-  const [isTableActive, setIsTableActive] = useState(false)
-
+  const [isViewActive, setIsViewActive] = useState(new Array(studentsViewButtons.length).fill(false))
   const [studentsView, activeList] = useState(<ListView />)
 
   // const [IsSortByName, sortByName] = useState()
@@ -20,23 +21,27 @@ function App() {
   // const [IsSortByGender, sortByName] = useState()
 
 
-  const setListView = () => {
-    if (!isListActive) {
-      setIsListActive(!isListActive)
-      setIsTableActive(!isTableActive)
-    }
+  const setViewActive = (e) => {
+    console.log(e)
   }
 
-  const setTableView = () => {
-    if (!isTableActive) {
-      setIsListActive(!isListActive)
-      setIsTableActive(!isTableActive)
-    }
-  }
+  // const setListView = () => {
+  //   if (!isListActive) {
+  //     setIsListActive(!isListActive)
+  //     setIsTableActive(!isTableActive)
+  //   }
+  // }
+
+  // const setTableView = () => {
+  //   if (!isTableActive) {
+  //     setIsListActive(!isListActive)
+  //     setIsTableActive(!isTableActive)
+  //   }
+  // }
 
 
-  useEffect(() => {
-    switch (isListActive) {
+  useEffect((a) => {
+    switch (a) {
       case true:
         activeList(<ListView />)
         break
@@ -47,7 +52,7 @@ function App() {
         console.log('No list found')
     }
 
-  }, [isListActive])
+  }, [isViewActive])
 
   return (
     <>
@@ -61,9 +66,9 @@ function App() {
                 <div className="card-body">
                   <p>Sort by:</p>
                   <div className="form-check">
-                    {/* <input className="form-check-input checkbox" type="checkbox" value="" id="nameSort"></input> */}
-                    <CheckBox label="First Name"/>
-                    
+                    <input className="form-check-input checkbox" type="checkbox" value="FirstName" id="nameSort"></input> First
+                    {/* <label className="form-check-label" htmlFor="genderSort">Age</label> */}
+
                   </div>
                   <div className="form-check">
                     <input className="form-check-input checkbox" type="checkbox" value="" id="genderSort"></input>
@@ -86,8 +91,8 @@ function App() {
                   <h5 className="card-title">Students List</h5>
                   <div className="btn-group" role="group" aria-label="Switch view">
 
-                    <Button viewType="list" isActive={isListActive} onClick={() => setListView()} />
-                    <Button viewType="table" isActive={isTableActive} onClick={() => setTableView()} />
+                    <Button buttons={studentsViewButtons} onClick={() => setViewActive(this.index)} />
+                    {/* <Button viewType="table" isActive={isTableActive} onClick={() => setTableView()} /> */}
 
                   </div>
 
