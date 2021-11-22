@@ -1,9 +1,9 @@
-const Button = ({ viewType, isActive, onClick }) => {
+const Button = ({ icon, viewType, activeView, onClick }) => {
     return (
         <button type="button" className={
-            isActive ? "btn btn-primary" : "btn btn-outline-primary"
+            viewType === activeView ? "btn btn-primary" : "btn btn-outline-primary"
         } onClick={() => onClick()}>
-            <i className={viewType === "list" ? "fa fa-list" : "fa fa-table"}></i>
+            <i className={icon}></i>
         </button>
     )
 }

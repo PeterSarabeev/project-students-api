@@ -1,15 +1,15 @@
 import Students from "../../data/Students"
 import React, { useEffect, useState } from "react"
 
-const TableView = ({ firstName, age, gender }) => {
+const TableView = ({ firstName, age, status }) => {
     const [students, setData] = useState([])
 
     useEffect(() => {
 
-        Students(firstName, age, gender).then(res => {
+        Students(firstName, age, status).then(res => {
             setData(res.data)
         })
-    }, [firstName, age, gender])
+    }, [firstName, age, status])
 
     return (
         <>
