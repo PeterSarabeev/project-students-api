@@ -1,11 +1,15 @@
-# React App
+# React App with NodeJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), generated with [NodeJS](https://nodejs.org/en/)
 
-# Running the project
+# Navigating the project
 
 Open two CMD terminals and navigate to project-students-api/project-practicum and project-students-api/student-api respectively.\
 If you are using VS Code you can use a split terminal.
+
+## Setup the project
+
+After navigating the respective folders run `npm install` to download required node modules.
 
 ## Available Scripts
 
